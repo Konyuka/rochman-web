@@ -22,7 +22,8 @@ class pagesController extends Controller
    //home page
    public function home(){
 
-      $sliders = slider::where('status',15)->orderby('id','desc')->get();
+      // $sliders = slider::where('status',15)->orderby('id','desc')->get();
+      $sliders = slider::where('status',15)->orderby('id','desc')->select(['id', 'image', 'caption_one', 'caption_two', 'caption_three'])->get();
       $blogs = blog::limit(3)->orderby('id','desc')->get();
       $page = pages::find(7);
       $featured = products::where('feature_alert','!=',"")->orderby('id','desc')->limit(4)->get();
