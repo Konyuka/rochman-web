@@ -142,8 +142,9 @@
                   <li data-target="#pxp-hero-props-carousel-1" data-slide-to="{!! $item->id !!}" class="pxp-cover @if($item->id == 1) active @endif" style="background-image: url({!! CMS::admin() !!}media/sliders/{!! $item->image !!});"></li>
                @endforeach
 
-               {{-- <li data-target="#pxp-hero-props-carousel-1" data-slide-to="0" class="pxp-cover active" style="background-image: url(images/properties/prop-1-1-thmb.jpg);"></li>
-                     <li data-target="#pxp-hero-props-carousel-1" data-slide-to="1" class="pxp-cover" style="background-image: url(images/properties/prop-2-1-thmb.jpg);"></li> --}}
+                  <!-- <li data-target="#pxp-hero-props-carousel-1" data-slide-to="0" class="pxp-cover active" style="background-image: url(images/properties/prop-1-1-thmb.jpg);"></li>
+                  <li data-target="#pxp-hero-props-carousel-1" data-slide-to="1" class="pxp-cover" style="background-image: url(images/properties/prop-2-1-thmb.jpg);"></li>  -->
+
             </ol>
 
             <div class="carousel-inner">
@@ -208,10 +209,12 @@
                      <a href="#" class="pxp-cta text-uppercase pxp-animate">View Details</a>
                   </div>
                @endforeach
-               {{-- <div class="carousel-item" data-slide="1" style="background-color: #837c12;">
-                     <div class="pxp-progress"></div>
-                     <div class="pxp-price"><span>ksh 2,675</span></div>
-                     <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
+
+           
+               <!-- <div class="carousel-item" data-slide="1" style="background-color: #837c12;">
+                  <div class="pxp-progress"></div>
+                  <div class="pxp-price"><span>ksh 2,675</span></div>
+                  <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
                </div>
                <div class="carousel-item" data-slide="2" style="background-color: #687389;">
                      <div class="pxp-progress"></div>
@@ -222,13 +225,16 @@
                      <div class="pxp-progress"></div>
                      <div class="pxp-price"><span>ksh 7,995</span></div>
                      <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
-               </div> --}}
+               </div>  -->
+
             </div>
+
             <div class="pxp-carousel-ticker">
                <div class="pxp-carousel-ticker-counter"></div>
                <div class="pxp-carousel-ticker-divider">&nbsp;&nbsp;/&nbsp;&nbsp;</div>
                <div class="pxp-carousel-ticker-total"></div>
             </div>
+            
          </div>
       </div>
 
@@ -240,7 +246,8 @@
                @foreach($featured as $property)
                   <div>
                      <a href="{!! route('properties.details',$property->url) !!}" class="pxp-prop-card-1 rounded-lg">
-                        @if(CMS::check_cover_image($property->id)==1)
+                        
+                        @if(CMS::check_cover_image($property->id)==0)   
                            <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url({!! CMS::admin() !!}media/products/{!! CMS::cover_image($property->id)->file_name !!});"></div>
                         @else
                            <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url({!! asset('assets/images/placeholder.png') !!});"></div>

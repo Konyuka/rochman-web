@@ -245,13 +245,13 @@ class cms {
       return $property;
     }
    /*======== get Products =======*/
-   public function product_categories($id){
+   public static function product_categories($id){
       $categories = categories::where('parentID',$id)->orderby('id','asc')->get();
       return $categories;
    }
 
    /*======== check cover image =======*/
-   public function check_cover_image($id){
+   public static function check_cover_image($id){
       $check = product_image::where('productID',$id)->where('cover',1)->count();
       return $check;
    }

@@ -21,10 +21,12 @@ class pagesController extends Controller
 {
    //home page
    public function home(){
+
       $sliders = slider::where('status',15)->orderby('id','desc')->get();
       $blogs = blog::limit(3)->orderby('id','desc')->get();
       $page = pages::find(7);
       $featured = products::where('feature_alert','!=',"")->orderby('id','desc')->limit(4)->get();
+      // return dd($featured);
       $lands = product_category::join('product_information','product_information.id','=','product_category_product_information.productID')
                                     ->where('categoryID',4)
                                     ->orderby('product_information.id','desc')
