@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 use Newsletter;
 use Session;
 use CMS;
+use Illuminate\Support\Facades\Cache;
+
 
 class pagesController extends Controller
 {
@@ -23,7 +25,13 @@ class pagesController extends Controller
    public function home(){
 
       // $sliders = slider::where('status',15)->orderby('id','desc')->get();
-      $sliders = slider::where('status',15)->orderby('id','desc')->select(['id', 'image', 'caption_one', 'caption_two', 'caption_three'])->get();
+      // $sliders = slider::where('status',15)->orderby('id','desc')->select(['id', 'image', 'caption_one', 'caption_two', 'caption_three'])->get();
+      $cacheDuration = env('CACHE_DURATION', 3600);
+      $sliders = Cache::remember('sliders', $cacheDuration, function () {
+         return slider::where('status',15)->orderby('id','desc')->select(['id', 'image', 'caption_one', 'caption_two', 'caption_three'])->get();
+      });
+      
+
       $blogs = blog::limit(3)->orderby('id','desc')->get();
       $page = pages::find(7);
       $featured = products::where('feature_alert','!=',"")->orderby('id','desc')->limit(4)->get();
