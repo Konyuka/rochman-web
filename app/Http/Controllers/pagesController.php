@@ -207,6 +207,8 @@ class pagesController extends Controller
          'phone_number'  => 'required',
       ]);
 
+      // return dd($request);
+
       if(!Newsletter::isSubscribed($request->email) ) {
          Newsletter::subscribe($request->email);
          Newsletter::subscribe($request->email, ['FNAME'=>$request->first_name,'LNAME'=>$request->last_name,'EMAIL'=>$request->email,'PHONE'=>$request->phone_number]);

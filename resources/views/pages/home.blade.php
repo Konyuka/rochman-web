@@ -528,23 +528,39 @@
          </div>
       </div>
 
-      {{-- <div class="pxp-full pxp-cover pt-100 pb-100 mt-100" style="background-image: url({!! asset('assets/images/newsletter-1-fig.jpg') !!});">
+      <div class="pxp-full pxp-cover pt-100 pb-100 mt-100" style="background-image: url({!! asset('assets/images/newsletter-1-fig.jpg') !!});">
          <div class="container">
             <h2 class="pxp-section-h2">Stay Up to Date</h2>
             <p class="pxp-text-light">Subscribe to our newsletter to receive our weekly feed</p>
             <div class="row mt-4 mt-md-5">
                <div class="col-sm-12 col-md-6">
-                     <form action="http://pixelprime.co/themes/Rochman Properties/light/index-2.html" class="pxp-newsletter-1-form">
+
+                     <!-- <form action="http://pixelprime.co/themes/Rochman Properties/light/index-2.html" class="pxp-newsletter-1-form">
                         <input type="text" class="form-control" placeholder="Enter your email...">
                         <a href="#" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4">Subscribe</a>
+                     </form> -->
+                     @include('partials._message')   
+                     <form action="{!! route('newsletter.save') !!}" method="POST">
+                        @csrf
+                        <h4>Subscribe</h4>
+                        <p>Subscriber to our newsletter to receive the latest updates and promotions.</p>
+                        <div class="form-group">
+                           <input type="text" name="first_name" class="form-control mb-3" placeholder="Enter First Name" required>
+                           <input type="text" name="last_name" class="form-control mb-3" placeholder="Enter Last Name" required>
+                           <input type="email" name="email" class="form-control mb-3" placeholder="Enter your Email" required>
+                           <input type="number" name="phone_number" class="form-control mb-3" placeholder="Enter Your Phone Number" required>
+                           <input type="submit" class="btn btn-success" value="Subscribe">
+                        </div>
                      </form>
+
                </div>
             </div>
          </div>
-      </div> --}}
+      </div> 
+      
    </div>
 
-   <div id="myModal" class="modal fade">
+   <!-- <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-newsletter">
          <div class="modal-content">
             <div class="modal-header justify-content-center">
@@ -569,7 +585,8 @@
                </form>
             </div>
          </div>
-      </div>
+      </div> -->
+
    </div>
 
 @endsection
