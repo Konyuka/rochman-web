@@ -165,7 +165,7 @@
                @endforeach
             </div>
 
-            <div class="pxp-carousel-controls">
+            <!-- <div class="pxp-carousel-controls">
                <a class="pxp-carousel-control-prev" role="button" data-slide="prev">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828">
                      <g id="Group_30" data-name="Group 30" transform="translate(-1845.086 -1586.086)">
@@ -184,7 +184,8 @@
                      </g>
                   </svg>
                </a>
-            </div>
+            </div> -->
+
          </div>
          <div class="carousel slide pxp-hero-props-carousel-1-prices" data-ride="carousel" data-pause="false" data-interval="false">
             <div class="carousel-inner">
@@ -299,7 +300,7 @@
                   </div>
                </div>
 
-               <!-- @php
+               {{-- @php
                   $number1 = CMS::custom_field($page->id,'Number 1')->getData();
                   $number2 = CMS::custom_field($page->id,'Number 2')->getData();
                   $number3 = CMS::custom_field($page->id,'Number 3')->getData();
@@ -312,7 +313,8 @@
                @endif
                @if($number3->check == 1)
                   {!! $number3->field->content !!}
-               @endif -->
+               @endif
+               --}}
 
             </div>
          </div>

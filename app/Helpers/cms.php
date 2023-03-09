@@ -139,7 +139,10 @@ class cms {
    //=====================================================================================================================
    //check if menu exists
    public static function check_menu($id){
-      $check = menu::where('id',$id)->where('status',15)->count();
+      $cacheDuration = env('CACHE_DURATION', 3600);
+      $check = Cache::remember('check2:' . $id, $cacheDuration, function() use ($id) {
+         return menu::where('id',$id)->where('status',15)->count();
+      });
       return $check;
    }
 
@@ -248,7 +251,10 @@ class cms {
     }
    /*======== get Products =======*/
    public static function product_categories($id){
-      $categories = categories::where('parentID',$id)->orderby('id','asc')->get();
+      $cacheDuration = env('CACHE_DURATION', 3600);
+      $categories = Cache::remember('categories:' . $id, $cacheDuration, function() use ($id) {
+        return categories::where('parentID',$id)->orderby('id','asc')->select(['url', 'name'])->get();
+      });
       return $categories;
    }
 
