@@ -15,6 +15,8 @@ use App\Models\cms\slider;
 use App\Models\Products\product_image;
 use App\Models\Products\product_category;
 use App\Models\Products\products;
+use Illuminate\Support\Facades\Cache;
+
 
 class cms {
    public static function get_timeago( $ptime ){
@@ -125,7 +127,7 @@ class cms {
 
    /*======== check custom field =======*/
    public static function custom_field($id,$title){
-      $field = custom_field::where('pageID',$id)->where('title',$title);
+      $field = custom_field::where('pageID',$id)->where('title',$title)->select(['content']);
       return response()->json([
          "field" => $field->first(),
          "check" => $field->count(),
@@ -240,7 +242,7 @@ class cms {
    //============================================ Products ===================================================================
    //========================================================================================================================
     /*======== property =======*/
-    public function property($id){
+    public static function property($id){
       $property = products::find($id);
       return $property;
     }
@@ -252,17 +254,20 @@ class cms {
 
    /*======== check cover image =======*/
    public static function check_cover_image($id){
-      $check = product_image::where('productID',$id)->where('cover',1)->count();
+      $cacheDuration = env('CACHE_DURATION', 3600);
+      $check = Cache::remember('check:' . $id, $cacheDuration, function() use ($id) {
+         return product_image::where('productID', $id)->where('cover', 1)->count();
+      });
       return $check;
    }
 
    /*======== cover image =======*/
-   public function cover_image($id){
+   public static function cover_image($id){
       $cover = product_image::where('productID',$id)->where('cover',1)->first();
       return $cover;
    }
 
-   public function single_product_categories($id){
+   public static function single_product_categories($id){
       $categories = product_category::join('product_category','product_category.id','=','product_category_product_information.categoryID')
                         ->where('productID',$id)
                         ->orderby('product_category.id','desc')

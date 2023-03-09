@@ -277,13 +277,29 @@
             <h2 class="pxp-section-h2">Real Estate by the Numbers</h2>
             <p class="pxp-text-light">In 2022, things look like this:</p>
             <div class="row">
-               {{-- <div class="col-sm-4">
+               
+               <div class="col-sm-4">
+                  <div class="pxp-numbers-item mt-4 mt-md-5">
+                     <div class="pxp-numbers-item-number"><span class="numscroller" data-min="0" data-max="3000" data-delay="1" data-increment="20">3000</span>+</div>
+                     <div class="pxp-numbers-item-title">Property Units</div>
+                  </div>
+               </div>
+
+               <div class="col-sm-4">
                   <div class="pxp-numbers-item mt-4 mt-md-5">
                      <div class="pxp-numbers-item-number"><span class="numscroller" data-min="0" data-max="195" data-delay="1" data-increment="1">995</span>M</div>
                      <div class="pxp-numbers-item-title">Property value</div>
                   </div>
-               </div> --}}
-               @php
+               </div>
+
+               <div class="col-sm-4">
+                  <div class="pxp-numbers-item mt-4 mt-md-5">
+                     <div class="pxp-numbers-item-number"><span class="numscroller" data-min="0" data-max="63" data-delay="1" data-increment="1">70</span>%</div>
+                     <div class="pxp-numbers-item-title">Home ownership</div>
+                  </div>
+               </div>
+
+               <!-- @php
                   $number1 = CMS::custom_field($page->id,'Number 1')->getData();
                   $number2 = CMS::custom_field($page->id,'Number 2')->getData();
                   $number3 = CMS::custom_field($page->id,'Number 3')->getData();
@@ -296,7 +312,8 @@
                @endif
                @if($number3->check == 1)
                   {!! $number3->field->content !!}
-               @endif
+               @endif -->
+
             </div>
          </div>
       </div>

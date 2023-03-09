@@ -24,24 +24,33 @@ class pagesController extends Controller
    //home page
    public function home(){
 
-      // $sliders = slider::where('status',15)->orderby('id','desc')->get();
-      // $sliders = slider::where('status',15)->orderby('id','desc')->select(['id', 'image', 'caption_one', 'caption_two', 'caption_three'])->get();
       $cacheDuration = env('CACHE_DURATION', 3600);
+
       $sliders = Cache::remember('sliders', $cacheDuration, function () {
          return slider::where('status',15)->orderby('id','desc')->select(['id', 'image', 'caption_one', 'caption_two', 'caption_three'])->get();
       });
       
+      $blogs = Cache::remember('blogs', $cacheDuration, function (){
+         return blog::limit(3)->orderby('id','desc')->select(['thumbnail', 'created_at', 'title', 'url'  ])->get();
+      });
 
-      $blogs = blog::limit(3)->orderby('id','desc')->get();
-      $page = pages::find(7);
-      $featured = products::where('feature_alert','!=',"")->orderby('id','desc')->limit(4)->get();
-      // return dd($featured);
-      $lands = product_category::join('product_information','product_information.id','=','product_category_product_information.productID')
-                                    ->where('categoryID',4)
-                                    ->orderby('product_information.id','desc')
-                                    ->get();
+      $page = Cache::remember('page', $cacheDuration, function(){
+         return pages::select(['meta_description','meta_tags','url','thumbnail','content', 'id'])->find(7);
+      });
+      
+      $featured = Cache::remember('featured', $cacheDuration, function (){
+         return products::where('feature_alert','!=',"")->orderby('id','desc')->limit(4)->
+         select(['id', 'url', 'product_name', 'price', 'bedrooms', 'bathrooms', 'size', 'feature_alert', 'feature_color'])->get();
+      });
+      
+      // $lands = product_category::join('product_information','product_information.id','=','product_category_product_information.productID')
+      //                               ->where('categoryID',4)
+      //                               ->orderby('product_information.id','desc')
+      //                               ->get();
 
-      return view('pages.home', compact('sliders','page','blogs','featured','lands'));
+      return view('pages.home', compact('sliders','page','blogs','featured',
+      // 'lands'
+      ));
    }
 
    public function mainpage(Request $request, $main){
