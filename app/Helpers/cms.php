@@ -76,7 +76,7 @@ class cms {
    }
 
    //check
-   public function check_string($string,$stringToSearch){
+   public static function check_string($string,$stringToSearch){
       if (stripos($string,$stringToSearch) !== false) {
          return 'true';
       }

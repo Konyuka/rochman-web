@@ -60,7 +60,7 @@ class propertyController extends Controller
    }
 
    public function details($url){
-
+      return dd($url);
       $property = products::where('url',$url)->first();
       // return dd($property);
       $images = product_image::where('productID',$property->id)->limit(4)->get();
