@@ -13,7 +13,8 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.10",
         "phpmailer/phpmailer": "^6.6",
-        "spatie/laravel-newsletter": "^4.11"
+        "spatie/laravel-newsletter": "^4.11",
+        "spatie/laravel-sitemap": "^6.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "3.7",

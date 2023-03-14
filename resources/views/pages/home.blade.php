@@ -149,7 +149,7 @@
 
             <div class="carousel-inner">
                @foreach($sliders as $item)
-                  <div class="carousel-item @if($item->id == 1) active @endif" data-slide="{!! $item->id !!}">
+                  <div class="carousel-item @if($item->id == 5) active @endif" data-slide="{!! $item->id !!}">
                      <div class="pxp-hero-bg pxp-cover" style="background-image: url({!! CMS::admin() !!}media/sliders/{!! $item->image !!});"></div>
                      <div class="pxp-caption">
                         <div class="container">
@@ -207,7 +207,7 @@
                      >
                      <div class="pxp-progress"></div>
                      <div class="pxp-price"><span>{!! $item->caption_three !!}</span></div>
-                     <a href="#" class="pxp-cta text-uppercase pxp-animate">View Details</a>
+                     <!-- <a href="#" class="pxp-cta text-uppercase pxp-animate">View Details</a> -->
                   </div>
                @endforeach
 

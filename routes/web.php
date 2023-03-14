@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +28,12 @@ Route::get('blog/{url}/details', 'pagesController@blog_details')->name('blog.det
 
 Route::post('newsletter/subscription/save', 'pagesController@subscription')->name('newsletter.save');
 Route::post('inquiry/form/save', 'pagesController@inquiry')->name('inquiry.save');
+
+Route::post('/sitemap.xml', 'pagesController@sitemap')->name('site.map');
+
+Route::get('generate-sitemap', function () {
+    SitemapGenerator::create('http://rochman-properties.co.ke/')
+        ->writeToFile(public_path('sitemap.xml'));
+});
+
 

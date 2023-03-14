@@ -62,6 +62,7 @@ class propertyController extends Controller
    public function details($url){
 
       $property = products::where('url',$url)->first();
+      // return dd($property);
       $images = product_image::where('productID',$property->id)->limit(4)->get();
       $categories = product_category::join('product_category','product_category.id','=','product_category_product_information.categoryID')
                               ->where('productID',$property->id)
