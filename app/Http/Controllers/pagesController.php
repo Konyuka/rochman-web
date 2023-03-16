@@ -110,8 +110,8 @@ class pagesController extends Controller
       $this->validate($request,[
          'names' => 'required',
          'phone_number' => 'required',
-         'view_date' => 'required',
-         'view_time' => 'required',
+         // 'view_date' => 'required',
+         // 'view_time' => 'required',
       ]);
 
       $inquiry = new inquiry;

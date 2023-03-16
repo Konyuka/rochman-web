@@ -690,7 +690,7 @@
                            <input type="email" class="form-control" name="email" placeholder="Email address"/>
                         </div>
 
-                        <div class="form-group col-lg-6">
+                        <!-- <div class="form-group col-lg-6">
                            <label for="">Visit Date <span class="text-danger">*</span></label>
                            <input type="date" class="form-control" name="view_date" required/>
                         </div>
@@ -698,7 +698,7 @@
                         <div class="form-group col-lg-6">
                            <label for="">Visit Time <span class="text-danger">*</span></label>
                            <input type="time" class="form-control" name="view_time" required/>
-                        </div>
+                        </div> -->
 
                         <div class="form-group col-lg-12">
                            <label for="">Message </label>
