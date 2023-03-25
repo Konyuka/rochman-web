@@ -12,6 +12,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    // commernt
 
     'name' => env('APP_NAME', 'Laravel'),
 
