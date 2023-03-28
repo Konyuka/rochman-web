@@ -17,7 +17,6 @@ use App\Models\Products\product_category;
 use App\Models\Products\products;
 use Illuminate\Support\Facades\Cache;
 
-
 class cms {
    public static function get_timeago( $ptime ){
      $estimate_time = time() - $ptime;
@@ -154,7 +153,6 @@ class cms {
                         ->orderby('position')
                         ->select('*','pages.id as pageID')
                         ->get();
-
       return $page;
    }
 
