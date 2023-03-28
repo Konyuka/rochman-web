@@ -26,8 +26,8 @@
                      <div class="pxp-footer-address">
                         <p>1st Floor,Morningside Office Park, Ngong Road.<br>
                         P.O. Box 58622-00200 Nairobi, Kenya.</p>
-                        <a class="pxp-footer-header" href="tel:+254 707 111 777">+254 707 111 777</a> <br>
-                        <a class="pxp-footer-header" href="mailto:sales@rochman-properties.co.ke">sales@rochman-properties.co.ke</a>
+                        <a class="pxp-footer-header bg-green" href="tel:+254 707 111 777">+254 707 111 777</a> <br>
+                        <a class="pxp-footer-header bg-green" href="mailto:sales@rochman-properties.co.ke">sales@rochman-properties.co.ke</a>
                      </div>
                   </div>
             </div>
@@ -53,3 +53,9 @@
       </div>
    </div>
 </div>
+
+<style>
+      .bg-green {
+         color: #28a745;
+      }
+   </style>
