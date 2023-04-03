@@ -61,7 +61,7 @@
                      </div>
                   </div>
 
-                  <div class="pxp-blog-posts-side-section mt-4 mt-md-5">
+                  {{-- <div class="pxp-blog-posts-side-section mt-4 mt-md-5">
                      <h3>Categories</h3>
                      <ul class="pxp-blog-posts-side-v-list list-unstyled mt-3 mt-md-4">
                         <li><a href="#">Fashion (3)</a></li>
@@ -70,9 +70,9 @@
                         <li><a href="#">Stories (2)</a></li>
                         <li><a href="#">Travel (4)</a></li>
                      </ul>
-                  </div>
+                  </div> --}}
 
-                  <div class="pxp-blog-posts-side-section mt-4 mt-md-5">
+                  {{-- <div class="pxp-blog-posts-side-section mt-4 mt-md-5">
                      <h3>Tags</h3>
                      <div class="pxp-blog-posts-side-tags mt-3 mt-md-4">
                            <a href="#">Premium (10)</a>
@@ -84,7 +84,7 @@
                            <a href="#">Travel (10)</a>
                            <a href="#">Personal (11)</a>
                      </div>
-                  </div>
+                  </div> --}}
                </div>
             </div>
          </div>
