@@ -1,5 +1,9 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>@yield('title') | Rochman Properties</title>
    <meta name="description" content="@yield('description')">
@@ -58,7 +62,7 @@
    <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/css/font-awesome.min.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/css/brands.css') !!}">
-   <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
    <link rel="stylesheet" href="{!! asset('assets/css/owl.carousel.min.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/css/owl.theme.default.min.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
