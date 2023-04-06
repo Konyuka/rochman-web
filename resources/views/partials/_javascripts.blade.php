@@ -1,8 +1,8 @@
 <script src="{!! asset('assets/js/jquery-3.4.1.min.js') !!}"></script>
 <script src="{!! asset('assets/js/popper.min.js') !!}"></script>
 <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
-<script src="{!! asset('assets/js/photoswipe.min.js') !!}"></script>
-<script src="{!! asset('assets/js/photoswipe-ui-default.min.js') !!}"></script>
+{{-- <script src="{!! asset('assets/js/photoswipe.min.js') !!}"></script> --}}
+{{-- <script src="{!! asset('assets/js/photoswipe-ui-default.min.js') !!}"></script> --}}
 <script src="{!! asset('assets/js/owl.carousel.min.js') !!}"></script>
 
 @yield('scripts')
@@ -30,4 +30,4 @@
 @livewireScripts
 
 <script src="{!! asset('assets/js/main3813.js') !!}"></script>
-<script src="{!! asset('assets/js/fancybox.min.js') !!}"></script>
+{{-- <script src="{!! asset('assets/js/fancybox.min.js') !!}"></script> --}}

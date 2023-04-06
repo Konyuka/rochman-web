@@ -11,7 +11,7 @@
    <meta property="article:modified_time" content="{!! date('Y-m-d H:i:s', strtotime($property->updated_at)) !!}" />
 @endsection
 @section('stylesheet')
-   <link rel="stylesheet" href="{!! asset('assets/css/photoswipe.css') !!}">
+   {{-- <link rel="stylesheet" href="{!! asset('assets/css/photoswipe.css') !!}"> --}}
    <link rel="stylesheet" href="{!! asset('assets/css/default-skin/default-skin.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/css/styled354.css') !!}">
 @endsection
