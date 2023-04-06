@@ -52,7 +52,9 @@
    <link rel="icon" type="image/png" sizes="96x96" href="{!! asset('assets/favicon/favicon-96x96.png') !!}">
    <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('assets/favicon/favicon-16x16.png') !!}">
    <link rel="icon" type="image/png" sizes="512x512" href="{!! asset('assets/favicon/512.png') !!}">
-   <link rel="manifest" href="{!! url('/') !!}/public/manifest.json">
+
+   {{-- <link rel="manifest" href="{!! url('/') !!}/public/manifest.json"> --}}
+
    <link href="{!! asset('assets/favicon/favicon.ico') !!}" rel="shortcut icon">
    <meta name="msapplication-TileColor" content="#ffffff">
    <meta name="msapplication-TileImage" content="{!! asset('assets/favicon/ms-icon-144x144.png') !!}">
