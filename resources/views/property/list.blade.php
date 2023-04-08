@@ -8,6 +8,8 @@
          <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
       </div> -->
 
+      
+
       <div class="pxp-content-side pxp-content-center pxp-half">
          <div class="pxp-content-side-wrapper">
             <div class="d-flex">
