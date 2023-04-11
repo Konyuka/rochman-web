@@ -33,6 +33,7 @@
 
    <!-- article -->
    @yield('article')
+   
 
    <meta property="og:image:secure_url" content="{!! asset('assets/favicon/apple-icon-120x120.png') !!}">
    <meta property="og:image:type" content="image/jpg">
