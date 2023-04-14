@@ -17,6 +17,7 @@ use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', 'pagesController@home')->name('home.page');
 
+
 Route::get('/{main}', 'pagesController@mainpage')->name('main.page');
 Route::get('/{parent}/{url}', 'pagesController@childpage')->name('child.page');
 
