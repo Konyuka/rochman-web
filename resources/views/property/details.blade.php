@@ -14,6 +14,8 @@
    {{-- <link rel="stylesheet" href="{!! asset('assets/css/photoswipe.css') !!}"> --}}
    <link rel="stylesheet" href="{!! asset('assets/css/default-skin/default-skin.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/css/styled354.css') !!}">
+
+   
 @endsection
 @section('content')
 <div class="pxp-content">
